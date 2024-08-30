@@ -2,8 +2,8 @@
 
 # Create your tests here.
 
-from config.wsgi import *
-from core.erp.models import Type, Employee
+# from config.wsgi import *
+# from core.erp.models import Type, Employee
 
 # Listar
 
@@ -41,7 +41,7 @@ from core.erp.models import Type, Employee
 # obj = Type.objects.filter(name__contains = 'Pre').query
 # obj = Type.objects.filter(name__endswith = 'r').exclude(id = 5)
 
-obj = Employee.objects.filter(type_id = 1)
-
-for i in Type.objects.filter(name__endswith = 'r')[:2]:
-    print(i.name)
+# obj = Employee.objects.filter(type_id = 1)
+#
+# for i in Type.objects.filter(name__endswith = 'r')[:2]:
+#     print(i.name)
