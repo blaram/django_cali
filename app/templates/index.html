@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>MI PRIMERA VISTA DE LA PAGINA</h1>
-    {% block content %}
-        <ul>
-            {% for category in categories %}
-                <li>{{ category }} / {{ category.name }}</li>
-            {% endfor %}
-        </ul>
-    {% endblock %}
-    <p>{{ name }}</p>
-</body>
-</html>
+{% extends 'body.html' %}
+
+{% block content %}
+
+{% endblock %}
