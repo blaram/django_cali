@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8f02fdb8-04da-48e2-a39c-0fea66b285d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/erp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/erp/views/category/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views/category/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +143,7 @@
       <workItem from="1585799002347" duration="8966000" />
       <workItem from="1585844458943" duration="93000" />
       <workItem from="1585846979152" duration="6087000" />
-      <workItem from="1725480428481" duration="12418000" />
+      <workItem from="1725480428481" duration="12951000" />
     </task>
     <servers />
   </component>
