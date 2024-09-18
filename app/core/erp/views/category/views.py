@@ -3,7 +3,7 @@ from django.http import JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 
 from core.erp.forms import CategoryForm
 from core.erp.models import Category
@@ -54,10 +54,7 @@ class CategoryCreateView(CreateView):
             action = request.POST['action']
             if action == 'add':
                 form = self.get_form()
-                if form.is_valid():
-                    form.save()
-                else:
-                    data['error'] = form.errors
+                data = form.save()
             else:
                 data['error'] = 'No ha ingresado ninguna opción'
         except Exception as e:
@@ -80,4 +77,36 @@ class CategoryCreateView(CreateView):
         context['entity'] = 'Categorías'
         context['list_url'] = reverse_lazy('erp:category_list')
         context['action'] = 'add'
+        return context
+
+
+class CategoryUpdateView(UpdateView):
+    model = Category
+    form_class = CategoryForm
+    template_name = 'category/create.html'
+    success_url = reverse_lazy('erp:category_list')
+
+    def dispatch(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        data = {}
+        try:
+            action = request.POST['action']
+            if action == 'edit':
+                form = self.get_form()
+                data = form.save()
+            else:
+                data['error'] = 'No ha ingresado ninguna opción'
+        except Exception as e:
+            data['error'] = str(e)
+        return JsonResponse(data)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Edición de una Categoría'
+        context['entity'] = 'Categorías'
+        context['list_url'] = reverse_lazy('erp:category_list')
+        context['action'] = 'edit'
         return context
