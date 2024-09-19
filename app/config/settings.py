@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     # Libs
     'widget_tweaks',
     # Apps
-    'core.erp'
+    'core.erp',
+    'core.homepage'
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = db.SQLITE
+DATABASES = db.POSTGRESQL
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -99,9 +100,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'es-ec'
+LANGUAGE_CODE = 'es-bo'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/La_Paz'
 
 USE_I18N = True
 
