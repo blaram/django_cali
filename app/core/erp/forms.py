@@ -14,7 +14,6 @@ class CategoryForm(ModelForm):
     class Meta:
         model = Category
         fields = '__all__'
-
         widgets = {
             'name': TextInput(
                 attrs={
@@ -23,11 +22,11 @@ class CategoryForm(ModelForm):
             ),
             'desc': Textarea(
                 attrs={
-                    'placeholder': 'Ingrese una descripción',
+                    'placeholder': 'Ingrese un nombre',
                     'rows': 3,
                     'cols': 3
                 }
-            )
+            ),
         }
 
     def save(self, commit=True):
@@ -40,5 +39,4 @@ class CategoryForm(ModelForm):
                 data['error'] = form.errors
         except Exception as e:
             data['error'] = str(e)
-
         return data
